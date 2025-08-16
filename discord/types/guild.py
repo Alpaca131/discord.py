@@ -90,9 +90,12 @@ GuildFeature = Literal[
     'VERIFIED',
     'VIP_REGIONS',
     'WELCOME_SCREEN_ENABLED',
+    'ENHANCED_ROLE_COLORS',
     'RAID_ALERTS_DISABLED',
     'SOUNDBOARD',
     'MORE_SOUNDBOARD',
+    'GUESTS_ENABLED',
+    'GUILD_TAGS',
 ]
 
 
@@ -179,8 +182,8 @@ class GuildMFALevel(TypedDict):
 class ChannelPositionUpdate(TypedDict):
     id: Snowflake
     position: Optional[int]
-    lock_permissions: Optional[bool]
-    parent_id: Optional[Snowflake]
+    lock_permissions: NotRequired[Optional[bool]]
+    parent_id: NotRequired[Optional[Snowflake]]
 
 
 class _RolePositionRequired(TypedDict):
